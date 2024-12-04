@@ -1,29 +1,15 @@
 #include <stdio.h>
-
-typedef struct point {
-	int x;
-	int y;
-} POINT;
-
-POINT translate(POINT p, POINT delta);
-
 int main(void)
 {
-	POINT p = { 2, 3 };
-	POINT delta = { 10, 10 };
-	POINT result;
+	int m[3][3] = { 10, 20, 30, 40, 50, 60, 70, 80, 90 };
 
-	result = translate(p, delta);
-	printf("(%d, %d)+(%d, %d)->(%d, %d)\n", p.x, p.y, delta.x, delta.y, result.x, result.y);
+	printf("m = %p\n", m);
+	printf("m[0] = %p\n", m[0]);
+	printf("m[1] = %p\n", m[1]);
+	printf("m[2] = %p\n", m[2]);
+	printf("&m[0][0] = %p\n", &m[0][0]);
+	printf("&m[1][0] = %p\n", &m[1][0]);
+	printf("&m[2][0] = %p\n", &m[2][0]);
+
 	return 0;
-}
-
-POINT translate(POINT p, POINT delta)
-{
-	POINT new_p;
-
-	new_p.x = p.x + delta.x;
-	new_p.y = p.y + delta.y;
-
-	return new_p;
 }
